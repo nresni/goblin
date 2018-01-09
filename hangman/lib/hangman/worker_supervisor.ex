@@ -12,6 +12,6 @@ defmodule Hangman.WorkerSupervisor do
   end
 
   def add_worker() do
-    {:ok, pid} = DynamicSupervisor.start_child(@me, Hangman.Server)
+    DynamicSupervisor.start_child(@me, Hangman.Server)
   end
 end
